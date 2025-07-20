@@ -1,0 +1,62 @@
+I want to write a domain description for my new project
+I can write about it like this that we have three type of user (normal user,docker,Club coach)
+now I define every think based on users
+first normal user: normal user or better to say every user has a profile normal user has many training 
+program and each training program has many exercise and each exercise has many like by every users
+the relation for exercise and training program is one to many because the exercise has been created by
+ admin and each exercise has be for many training program also.
+and each user has have many food program(or better name if you have for it) 
+and user can do many thinks that is relate to other users
+
+user (club coach) a club coach role is a role that a normal user can by passing the information of coach 
+to specific endpoint and accept it by admin they can get the role of coach too
+each coach can do any think like that that use can do this mean they can create a training 
+program and food program etc ...
+but extra feature and relation that it has each coach can has many (traing program coach) with mean 
+the training progam that can write for other normal user it has some explentation like price 
+,max time to write and some thing else 
+user can buy  (traing program coach) and then coach has to write program that dscribe for normal user 
+if coach not write the program user can create complaint entitiy with check after complaint that validate
+how much its true and if was true this mean time spend of that coach has to write program and 
+coach not write that this complaint will be send to coach and coach should pay back the money 
+a bill with this description will be send for the coach and coach accept this rule while enter as a role 
+coach 
+coach can create training progam for user that buy the (traing program coach) and this mean many yo many relation for this 
+also coach can add exercise entity but normal user just can add many to many relation of exercise to traing program that 
+write for itself 
+also coach can create a group and any user that has buy the (traing program coach) even one times can join without any accept 
+but other user only by accept coach can join
+each group has many message that member of that can send
+
+docker role is another role that is looks like coach this mean validation login and create (food program product) and 
+like coach has to be responsible for condiquensis of any thing relation to user also each docker has a group for its self with 
+is main group and like that user can message in three
+each user after buy any product from coach ot docker can rate them so each product has many rate and this rate is show for every 
+other user and the number of avg star is compute for the coach of that product
+
+
+🔁 Key Relationships Summary
+
+    User ↔ Profile: One-to-One
+
+    User ↔ Training Program: One-to-Many
+
+    Training Program ↔ Exercise: Many-to-Many
+
+    Exercise ↔ Like: Many-to-Many
+
+    User ↔ Nutrition Plan: One-to-Many
+
+    Coach ↔ Coaching Offers: One-to-Many
+
+    User ↔ Coaching Offers (Purchased): Many-to-Many
+
+    Coach ↔ Group: One-to-Many
+
+    Group ↔ User: Many-to-Many (with role/approval rules)
+
+    Group ↔ Messages: One-to-Many
+
+    Complaint ↔ Purchase: One-to-One
+
+    Product ↔ Ratings: One-to-Many
