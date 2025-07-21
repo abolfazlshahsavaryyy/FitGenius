@@ -14,16 +14,17 @@ class Profile(models.Model):
         return f"{self.name} ({self.user.username})"
     
 class CoachProfile(models.Model):
-    years_of_experience=models.IntegerChoices(max=100)
+    user=models.OneToOneField('Account.ApplicationUser',on_delete=models.CASCADE,related_name='coach_profile')
+    years_of_experience = models.PositiveIntegerField(
+        validators=[MinValueValidator(0), MaxValueValidator(100)]
+    )
     certifications=models.CharField(max_length=100)
     description=models.CharField(max_length=500)
 
 class NutritionistProfile(models.Model):
     user = models.OneToOneField('Account.ApplicationUser', on_delete=models.CASCADE, related_name='nutritionist_profile')
-
     certifications = models.CharField(max_length=100)
     description = models.CharField(max_length=500)
-    
     years_of_experience = models.PositiveIntegerField(
         validators=[MinValueValidator(0), MaxValueValidator(100)]
     )
