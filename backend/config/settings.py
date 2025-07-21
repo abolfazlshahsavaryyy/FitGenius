@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'CoachingOffers',
     'Group',
 ]
+AUTH_USER_MODEL = 'Account.ApplicationUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
