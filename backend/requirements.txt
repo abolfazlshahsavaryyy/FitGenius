@@ -1,0 +1,9 @@
+Django~=4.2.0 # The core Django framework. Adjust version as needed, e.g., 5.0.0
+djangorestframework~=3.14.0 # If you plan to build REST APIs
+psycopg2-binary~=2.9.0 # For PostgreSQL database. Use 'mysqlclient' for MySQL or 'pyodbc' for SQL Server.
+Pillow~=9.4.0 # For image processing (e.g., user avatars, media uploads)
+python-dotenv~=1.0.0 # For managing environment variables (e.g., database credentials, secret keys)
+django-crispy-forms~=2.0 # For easier form rendering and styling
+django-filter~=23.2 # For powerful filtering capabilities in list views
+gunicorn
+whitenoise
