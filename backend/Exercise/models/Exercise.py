@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.conf import settings
 class Exercise(models.Model):
     days = models.ManyToManyField(  # Renamed to `days` (plural) for clarity
         'TrainingProgram.Day',
@@ -17,7 +17,11 @@ class Exercise(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
+    likes = models.ManyToManyField(
+        settings.AUTH_USER_MODEL,
+        related_name='liked_exercises',
+        blank=True
+    )
     class Meta:
         ordering = ['order']
 
