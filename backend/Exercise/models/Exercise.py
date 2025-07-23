@@ -6,6 +6,11 @@ class Exercise(models.Model):
         related_name='exercises',
         blank=True
     )
+    coach_creator = models.ForeignKey(
+        'Account.CoachProfile',  # ← use string reference to avoid circular import
+        on_delete=models.CASCADE,
+        related_name='created_exercises'
+    )
     name = models.CharField(max_length=100)
     description = models.TextField(blank=True)
 
